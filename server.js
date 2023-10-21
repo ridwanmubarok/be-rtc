@@ -3,7 +3,7 @@ const http = require('http');
 const socketio = require('socket.io');
 const app = express();
 const server = http.createServer(app);
-const allowedOrigins = ["https://amubhya.test", 'http://amubhya.test', "https://katakreasi.com", "http://127.0.0.1:8000","https://diskusi.rogatekno.com"]; // Ganti dengan alamat domain yang diizinkan
+const allowedOrigins = ["https://amubhya.test", 'http://amubhya.test', "https://katakreasi.com", "http://127.0.0.1:8000","https://diskusi.rogatekno.com","https://diskusi-git-master-diskusi.vercel.app/"]; // Ganti dengan alamat domain yang diizinkan
 const io = socketio(server, {
   transports: ["websocket", "polling"], // Aktifkan WebSocket
   cors: {
