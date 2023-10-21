@@ -33,8 +33,16 @@ io.on("connection", (socket) => {
       io.to(roomId).emit("user-connected", userId);
     }, 1000);
 
-    socket.on("message", (message) => {
-      io.to(roomId).emit("createMessage", message, userName); // Menggunakan userName dalam emit pesan
+    client.on('shareScreen', () => {
+      io.to(payload.roomId).emit('startShareScreen');
+    });
+
+    client.on('stopShareScreen', (userId) => {
+      io.to(payload.roomId).emit('startStopShareScreen', userId);
+    });
+
+    socket.on("message", (message,time) => {
+      io.to(roomId).emit("createMessage", message, userName,time); // Menggunakan userName dalam emit pesan
     });
 
     socket.on("disconnect", () => {
