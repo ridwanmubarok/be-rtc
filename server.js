@@ -34,6 +34,9 @@ const options = { // Perbaiki nama variabel ke "options"
 }
 app.use("/peerjs", ExpressPeerServer(server, options));
 app.use(express.static("public"));
+app.get('/', (req, res) => {
+  res.send('Hello, World!'); // Send 'Hello, World!' as the response
+});
 
 io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId, userName) => {
