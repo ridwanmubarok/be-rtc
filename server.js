@@ -11,6 +11,7 @@ const allowedOrigins = [
   "https://diskusi.rogatekno.com",
   "https://diskusi-git-master-diskusi.vercel.app",
   "http://diskusi-git-master-diskusi.vercel.app",
+  "https://diskusi.vercel.app"
 ]; // Ganti dengan alamat domain yang diizinkan
 const io = socketio(server, {
   transports: ["websocket", "polling"], // Aktifkan WebSocket
